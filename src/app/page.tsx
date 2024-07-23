@@ -1,56 +1,57 @@
-"use client";  // Mark as a client component
+"use client"; // Tandai sebagai komponen klien
 
-import React, { useState } from 'react';
+import React from "react";
+import dynamic from "next/dynamic";
 
-const TodoApp = () => {
-    const [tasks, setTasks] = useState<string[]>([]);
-    const [newTask, setNewTask] = useState<string>('');
+// Import komponen TodoApp secara dinamis
+const TodoApp = dynamic(() => import("~/app/_components/TodoApp"), { ssr: false });
 
-    const addTask = () => {
-        if (newTask.trim()) {
-            setTasks([...tasks, newTask]);
-            setNewTask('');
-        }
-    };
+function Page() {
+  return (
+    <div
+      className="min-h-screen text-foreground flex items-center justify-center p-4"
+      style={{
+        fontFamily: "'REM'",
+        background: 'radial-gradient(circle, #a1e5e8 0%, #5e35b1 100%)'
+      }}
+    >
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=REM:wght@400;700&display=swap');
 
-    const deleteTask = (index: number) => {
-        setTasks(tasks.filter((_, i) => i !== index));
-    };
+          .font-rem {
+            font-family: 'REM';
+          }
 
-    return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-            <div className="bg-white p-6 rounded shadow-lg w-full max-w-md">
-                <h1 className="text-2xl font-bold mb-4">To-Do List</h1>
-                <div className="flex mb-4">
-                    <input
-                        type="text"
-                        className="flex-1 px-4 py-2 border rounded-l"
-                        value={newTask}
-                        onChange={(e) => setNewTask(e.target.value)}
-                    />
-                    <button
-                        onClick={addTask}
-                        className="px-4 py-2 bg-blue-500 text-white rounded-r"
-                    >
-                        Add
-                    </button>
-                </div>
-                <ul>
-                    {tasks.map((task, index) => (
-                        <li key={index} className="border-b py-2 flex justify-between items-center">
-                            <span>{task}</span>
-                            <button
-                                onClick={() => deleteTask(index)}
-                                className="ml-4 px-2 py-1 bg-red-500 text-white rounded"
-                            >
-                                Delete
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </div>
-    );
-};
+          /* Tambahkan gaya untuk hover pada tautan */
+          .link-hover {
+            transition: opacity 0.3s ease;
+          }
+          .link-hover:hover {
+            opacity: 0.6;
+          }
+        `}
+      </style>
+      {/* Kontainer utama untuk To-Do List */}
+      <div className="bg-card p-6 rounded-lg shadow-lg w-full max-w-md mx-4 sm:mx-6 lg:mx-8 xl:mx-auto font-rem">
+        <h1 className="text-3xl font-bold mb-6 text-center text-primary">To-Do List</h1>
+        <h5 className="text-center">Mini Project untuk IT Front End KAT-ITB 2024</h5>
+        {/* Bagian untuk aplikasi */}
+        <TodoApp />
+        <p className="text-right">
+          {/* Tautkan ke Instagram dan tambahkan efek hover */}
+          <a
+            href="https://instagram.com/wlmoi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-hover"
+          >
+            -@wlmoi
+          </a>
+        </p>
+      </div>
+    </div>
+  );
+}
 
-export default TodoApp;
+export default Page;
