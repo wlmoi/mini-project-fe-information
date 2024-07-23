@@ -17,10 +17,9 @@ function Page() {
     >
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=REM:wght@400;700&display=swap');\
-          /*font style agar sama dengan dikpus*/
+          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&display=swap');
           .font-rem {
-            font-family: 'REM';
+            font-family: 'Playfair Display', serif;
           }
           /*for the wlmoi*/
           .link-hover {
