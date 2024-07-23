@@ -50,10 +50,10 @@ const TodoApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="flex items-center justify-center">
       {/* Main container for the To-Do List */}
       <div className="bg-white p-6 rounded shadow-lg w-full max-w-md">
-        {/* Section for adding a new task */}
+        {/* Bagian nambahin task baru */}
         <div className="flex mb-4">
           <input
             type="text"
@@ -70,7 +70,7 @@ const TodoApp = () => {
           </Button>
         </div>
 
-        {/* Section for displaying the list of tasks */}
+        {/* Bagian agar nunjukkin tasks */}
         <ul>
           {tasks.length === 0 ? (<p className="text-md text-center font-mono font-thin text-gray-600 text-opacity-50">No tasks available...</p>
           ) : (
