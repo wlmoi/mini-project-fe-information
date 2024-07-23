@@ -38,11 +38,8 @@ function Page() {
         {/* Bagian untuk aplikasi */}
         <TodoApp />
         <p className="text-right">
-          {/* Tautkan ke Instagram dan tambahkan efek hover */}
           <a
             href="https://instagram.com/wlmoi"
-            target="_blank"
-            rel="noopener noreferrer"
             className="link-hover"
           >
             -@wlmoi
