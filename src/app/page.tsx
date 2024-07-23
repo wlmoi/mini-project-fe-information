@@ -17,15 +17,14 @@ function Page() {
     >
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=REM:wght@400;700&display=swap');
-
+          @import url('https://fonts.googleapis.com/css2?family=REM:wght@400;700&display=swap');\
+          /*font style agar sama dengan dikpus*/
           .font-rem {
             font-family: 'REM';
           }
-
-          /* Tambahkan gaya untuk hover pada tautan */
+          /*for the wlmoi*/
           .link-hover {
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
           }
           .link-hover:hover {
             opacity: 0.6;
