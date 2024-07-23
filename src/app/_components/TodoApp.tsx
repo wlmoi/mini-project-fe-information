@@ -1,6 +1,7 @@
 "use client";  // Mark as a client component
 
 import React, { useState } from 'react';
+import { Button } from '~/components/ui/button'; // Import komponen Button
 
 const TodoApp = () => {
     const [tasks, setTasks] = useState<string[]>([]);
@@ -28,23 +29,23 @@ const TodoApp = () => {
                         value={newTask}
                         onChange={(e) => setNewTask(e.target.value)}
                     />
-                    <button
+                    <Button
                         onClick={addTask}
                         className="px-4 py-2 bg-blue-500 text-white rounded-r"
                     >
                         Add
-                    </button>
+                    </Button>
                 </div>
                 <ul>
                     {tasks.map((task, index) => (
                         <li key={index} className="border-b py-2 flex justify-between items-center">
                             <span>{task}</span>
-                            <button
+                            <Button
                                 onClick={() => deleteTask(index)}
                                 className="ml-4 px-2 py-1 bg-red-500 text-white rounded"
                             >
                                 Delete
-                            </button>
+                            </Button>
                         </li>
                     ))}
                 </ul>
