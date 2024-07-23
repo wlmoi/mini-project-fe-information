@@ -6,7 +6,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata = {
   title: "To Do List",
-  description: "Mini Project Front End",
+  description: "Mini Project Front End William Anthony",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
