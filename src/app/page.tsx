@@ -13,21 +13,6 @@ function Page() {
         background: 'radial-gradient(circle, #a1e5e8 0%, #5e35b1 100%)'
       }}
     >
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&display=swap');
-          .font-rem {
-            font-family: 'Playfair Display', serif;
-          }
-          /*for the wlmoi*/
-          .link-hover {
-            transition: opacity 0.4s ease;
-          }
-          .link-hover:hover {
-            opacity: 0.6;
-          }
-        `}
-      </style>
       {/* Kontainer utama untuk To-Do List */}
       <div className="bg-card p-6 rounded-lg shadow-lg w-full max-w-md mx-4 sm:mx-6 lg:mx-8 xl:mx-auto font-rem">
         <h1 className="text-3xl font-bold mb-6 text-center text-primary">To-Do List</h1>
